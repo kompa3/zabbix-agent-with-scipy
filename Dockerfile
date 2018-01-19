@@ -4,11 +4,13 @@ FROM zabbix/zabbix-agent:ubuntu-latest
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python \
     python-dev \
+    wget \
+    ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/
 
 # install pip
-RUN wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && rm get-pip.py
+RUN wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py && python get-pip.py && rm get-pip.py
 
 # Fix: InsecurePlatformWarning
 # http://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning
