@@ -32,3 +32,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/ \
     && pip install --no-cache-dir scipy
 
+# install pypy
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    pypy \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/
+
