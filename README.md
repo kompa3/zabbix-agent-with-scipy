@@ -1,2 +1,2 @@
 # zabbix-agent-with-scipy
-Installed python and scipy in top of zabbix/zabbix-agent
+Installed pypy and scipy in top of zabbix/zabbix-agent
