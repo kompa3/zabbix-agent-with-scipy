@@ -36,3 +36,8 @@ RUN pip install --no-cache-dir numpy
 
 # install scipy
 RUN pip install --no-cache-dir scipy
+
+# Replace /usr/bin/python with link to pypy
+RUN rm /usr/bin/python && ln -s /usr/bin/pypy /usr/bin/python
+
+
